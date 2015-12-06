@@ -1,0 +1,6 @@
+customer: PARTY LIMITED PTY LTD
+address: 1337 Elite Street, Eliville
+notes: This job is just another test job... here's a smiley face: <img src="https://textfac.es/static/ico/favicon.png">
+neighbouringproperties: 1336 Elite Street; 1338 Elite Street
+councilassets: Elite Street; Jackson Street; Liverpool Street
+letters: RM 11/2/15; RM 15/2/15
