@@ -1,6 +1,0 @@
-customer: TEST PTY LTD
-address: 42 Test Street, Testville
-notes: A test job...
-neighbouringproperties: Test Property 1; Test Property 2
-councilassets: Test Street; Test2 Street; Test3 Street
-letters: RM 10/2/3
