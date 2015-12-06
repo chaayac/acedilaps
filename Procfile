@@ -1,2 +1,1 @@
-web: python -m CGIHTTPServer $PORT
-
+web: python standlone.py

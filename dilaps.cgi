@@ -7,7 +7,7 @@ import sys, re
 import glob
 import cgitb
 import geocoder
-# cgitb.enable()
+cgitb.enable()
 # example to get image
 returnedform = cgi.FieldStorage(keep_blank_values=1)
 dictionary = {}
