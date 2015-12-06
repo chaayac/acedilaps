@@ -1,0 +1,6 @@
+customer: TEST PTY LTD
+address: 1 Franklyn Street, Concord
+notes: Another satellite test
+neighbouringproperties: 2 Ada Ln
+councilassets: Ada ln
+letters: lala
