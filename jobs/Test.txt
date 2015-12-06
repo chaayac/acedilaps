@@ -1,6 +1,0 @@
-customer: test
-address: 5 Westcott Street, Eastlakes
-notes: JAJA
-neighbouringproperties: JAJA
-councilassets: JAJA
-letters: JAJA

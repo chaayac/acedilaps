@@ -1,6 +1,0 @@
-customer: cvcv
-address: 15 linden street, mascot
-notes: 
-neighbouringproperties: 
-councilassets: 
-letters: 
