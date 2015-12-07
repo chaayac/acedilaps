@@ -7,6 +7,7 @@ import sys, re
 import glob
 import geocoder
 import cgitb
+cgitb.enable()
 # example to get image
 returnedform = cgi.FieldStorage(keep_blank_values=1)
 dictionary = {}
@@ -44,14 +45,14 @@ def page_header():
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dilap</title>
 	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Bootstrap theme -->
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/carousel.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/carousel.css" rel="stylesheet">
 	<!-- Sign in theme -->
-	<link href="css/signin.css" rel="stylesheet">
+	<link href="/css/signin.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
-	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
 	</head>
 	<body style="background-color: white">
 	<div class="container" style="background-color: rgba(255,255,255,0.8)">
@@ -66,7 +67,7 @@ def page_trailer():
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-	<script src='js/bootstrap.min.js'></script>
+	<script src='/js/bootstrap.min.js'></script>
 	<script>
 	$('.row .btn').on('click', function(e) {
     e.preventDefault();
@@ -101,7 +102,6 @@ def page_trailer():
 
 # modify this later...
 def job_holder(jobnumber):
-	
 	customer = dictionary[jobnumber]['customer']
 	address = dictionary[jobnumber]['address']
 	notes = dictionary[jobnumber]['notes']
@@ -145,7 +145,7 @@ def job_holder(jobnumber):
 			        <th>Neighbouring Properties</th>
 			        <th>Letters</th>
 			      </thead>
-			      """ % (jobnumber, customer, img, notes, jobnumber, jobnumber, time.ctime(os.path.getmtime('./jobs/' + jobnumber + '.txt')))
+			      """ % (jobnumber, customer, img, notes, jobnumber, jobnumber, time.ctime(os.path.getmtime('jobs/' + jobnumber + '.txt')))
 		
 	to_return += """
 	        <tr>
@@ -201,10 +201,10 @@ if 'search_btn' in returnedform:
 	searchVar = True
 
 if 'createjob' in returnedform:
-	if os.path.exists('./jobs/' + returnedform['jobnumber'].value + '.txt'):
+	if os.path.exists('/jobs/' + returnedform['jobnumber'].value + '.txt'):
 		print "File exists"
 	else:
-		with open('./jobs/' + returnedform['jobnumber'].value + '.txt', 'w') as f:
+		with open('/jobs/' + returnedform['jobnumber'].value + '.txt', 'w') as f:
 			f.write('customer: ' + returnedform['customer'].value + '\n')
 			f.write('address: ' + returnedform['address'].value + '\n')
 			
@@ -220,7 +220,7 @@ if 'createjob' in returnedform:
 			if 'letters' in returnedform:	
 				f.write('letters: ' + returnedform['letters'].value + '\n')
 
-filesarray = glob.glob('./jobs/*.txt')
+filesarray = glob.glob('jobs/*.txt')
 filesarray.sort(key=os.path.getmtime, reverse = True)
 
 for files in filesarray:
@@ -238,7 +238,7 @@ for files in filesarray:
 				value = line.split(':', 1)[1].strip()
 				
 				dictionary[jobnumber][keyword] = value
-				
+
 			if not searchVar:
 				print job_holder(jobnumber)
 
